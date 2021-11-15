@@ -12,5 +12,7 @@ class ProjectReader:
         print(content)
 
         # deserialisoi TOML-formaatissa oleva merkkijono ja muodosta Project-olio sen tietojen perusteella
-        deser = toml.load(content)
-        return Project(deser.name, "Test description", [], [])
+        toml_string = request.urlopen(self._url).read().decode("utf-8")
+        parsed_toml = toml.loads(toml_string)
+        print(parsed_toml)
+        return Project(parsed_toml['tool']['poetry']['name'], parsed_toml['tool']['poetry']['description'], parsed_toml['tool']['poetry']['dependencies'].keys(), parsed_toml['tool']['poetry']['dev-dependencies'].keys())
