@@ -30,7 +30,7 @@ class Not:
     def __init__(self, event):
         self._event = event
 
-        print(f"test")
+        print(self._event)
     def matches(self, player):
         player_value = getattr(player, self._attr)
 
