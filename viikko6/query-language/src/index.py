@@ -13,14 +13,14 @@ def main():
         PlaysIn("PHI")
     )"""
 
-    """matcher = And(
+    matcher = And(
         Not(HasAtLeast(1, "goals")),
         PlaysIn("NYR")
-    )"""
-    matcher = And(
+    )
+    """matcher = And(
         HasFewerThan(1, "goals"),
         PlaysIn("NYR")
-    )
+    )"""
 
     for player in stats.matches(matcher):
         print(player)
