@@ -29,6 +29,7 @@ class HasAtLeast:
 class Not:
     def __init__(self, value):
         self._value = value
+        self._attr = attr
 
     def matches(self, player):
         player_value = getattr(player, self._attr)
