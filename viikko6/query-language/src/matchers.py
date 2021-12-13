@@ -28,7 +28,8 @@ class HasAtLeast:
 
 class Not:
     def __init__(self, event):
-        self._attr = event
+        self._event = event
+
         print(self._attr)
     def matches(self, player):
         player_value = getattr(player, self._attr)
