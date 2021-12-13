@@ -1,12 +1,12 @@
 class And:
     def __init__(self, *matchers):
         self._matchers = matchers
-    
+
     def matches(self, player):
         for matcher in self._matchers:
             if not matcher.matches(player):
                 return False
-        
+
         return True
 
 class PlaysIn:
@@ -28,7 +28,7 @@ class HasAtLeast:
 
 class Not:
     def __init__(self, event):
-        self._attr = event
+        self._attr = self.event
 
     def matches(self, player):
         player_value = getattr(player, self._attr)
