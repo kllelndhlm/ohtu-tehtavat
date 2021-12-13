@@ -1,0 +1,47 @@
+class TennisGame:
+    def __init__(self, player1_name, player2_name):
+        self.player1_name = player1_name
+        self.player2_name = player2_name
+        self.m_score1 = 0
+        self.m_score2 = 0
+
+    def won_point(self, player_name):
+        if player_name == self.player1_name:
+            self.m_score1 = self.m_score1 + 1
+        else:
+            self.m_score2 = self.m_score2 + 1
+
+    def get_score(self):
+        score = ""
+        temp_score = 0
+
+        love = {0: "Love-All",
+            1: "Fifteen-All",
+            2: "Thirty-All",
+            3: "Forty-All",
+            4: "Deuce"}
+
+        advWin = {4: "Advantage player1",
+         : "Advantage player1",
+            -1: "Advantage player2",
+            2: "Win for player1",
+            -2: "Win for player2"}
+
+        points = {0: "Love",
+            1: "Fifteen",
+            2: "Thirty"}
+
+        if self.m_score1 == self.m_score2:
+            temp = self.m_score1
+            score = love.get(temp, "X")
+
+        elif self.m_score1 >= 4 or self.m_score2 >= 4:
+            temp = self.m_score1 - self. m_score2
+            score = advWin.get(temp, "X")
+
+        else:
+            score_player1 = points.get(self.m_score1, "X")
+            score_player2 = points.get(self.m_score2, "X")
+            score = score+score_player1+"-"+score_player2
+
+        return score
