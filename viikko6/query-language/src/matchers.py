@@ -27,14 +27,7 @@ class HasAtLeast:
         return player_value >= self._value
 
 class Not:
-    def __init__(self, attr):
-        self._attr = attr
-
-    def matches(self, attr):
-        player_value = getattr(player, self._attr)
-
-        return player_value != self._value
-
+    pass
 class All:
     def __init__(self, value, attr):
         self._value = value
