@@ -46,7 +46,7 @@ class All:
 
         return player_value == player__value
 
-class HasAtLeast:
+class HasFewerThan:
     def __init__(self, value, attr):
         self._value = value
         self._attr = attr
