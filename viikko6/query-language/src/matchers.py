@@ -28,7 +28,7 @@ class HasAtLeast:
 
 class Not:
     def __init__(self, event):
-        return event
+        pass
 
 class All:
     def __init__(self, value, attr):
